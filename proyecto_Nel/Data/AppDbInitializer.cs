@@ -32,7 +32,7 @@ namespace proyecto_Nel.Data
                         {
                             NombreCiudad = "Oviedo",
                             logolURL = "D:/NelAllendeIglesias/Proyecto/Backend/imagenes/ciudades/oviedo.jpg",
-                            DescripcionCiudad = "Esto es una descripcion de oveido"
+                            DescripcionCiudad = "Esto es una descripcion de oviedo"
                         },
                     });
                     context.SaveChanges();
