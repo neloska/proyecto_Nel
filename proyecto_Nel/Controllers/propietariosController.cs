@@ -17,7 +17,7 @@ namespace proyecto_Nel.Controllers
         public IActionResult Index()
         {
             var data = _context.propietario.ToList();
-            return View();
+            return View(data);
         }
     }
 }

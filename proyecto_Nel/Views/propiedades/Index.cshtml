@@ -1,0 +1,38 @@
+﻿@*Definir el modelo*@
+@model IEnumerable<propiedades>
+
+@*Definir ViewData*@
+@{
+    ViewData["Title"] = "Lista de propiedades";
+}
+@*Codigo*@
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    @*Nombres importados desde el modelo*@
+                    <th>@Html.DisplayNameFor(model => model.FotoPropiedadURL)</th>
+                    <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                    <th>@Html.DisplayNameFor(model => model.Descripcion)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+               {
+                   <tr>
+                       <td class="align-middle">
+                           <img class="rounded-circle" src="@item.FotoPropiedadURL" alt="@item.Nombre" style="max-width: 150px"/>
+                       </td>
+                       <td class="align-middle">
+                           @Html.DisplayFor(modelItem => item.Nombre)
+                       </td>
+                       <td class="align-middle">
+                           @Html.DisplayFor(modelItem => item.Descripcion)
+                       </td>
+                   </tr>
+               }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -23,16 +23,16 @@ namespace proyecto_Nel.Data
                     context.ciudades.AddRange(new List<ciudades>(){
                         new ciudades()
                         {
-                            NombreCiudad = "Gijon",
-                            logolURL = "D:/NelAllendeIglesias/Proyecto/Backend/imagenes/ciudades/gijon.jpg",
-                            DescripcionCiudad = "Esto es una descripcion de gijon"
+                            Nombre = "Gijon",
+                            logolURL = "https://i.pinimg.com/originals/94/71/df/9471dff5831a040a8288072c6697f32c.jpg",
+                            Descripcion = "Esto es una descripcion de gijon"
                         },
 
                         new ciudades()
                         {
-                            NombreCiudad = "Oviedo",
-                            logolURL = "D:/NelAllendeIglesias/Proyecto/Backend/imagenes/ciudades/oviedo.jpg",
-                            DescripcionCiudad = "Esto es una descripcion de oviedo"
+                            Nombre = "Oviedo",
+                            logolURL = "https://images.squarespace-cdn.com/content/v1/5a86b05bcf81e0af04936cc7/1534417590635-76526BKJ8IJ1SCB8TUXK/que-ver-en-asturias-oviedo.jpg",
+                            Descripcion = "Esto es una descripcion de oviedo"
                         },
                     });
                     context.SaveChanges();
@@ -45,14 +45,14 @@ namespace proyecto_Nel.Data
                         new propietario()
                         {
                             NombreCompleto = "El señor del Monopoly",
-                            FotoDePerfilURL = "D:/NelAllendeIglesias/Proyecto/Backend/imagenes/propietarios/monopoly.jpg",
+                            FotoDePerfilURL = "https://i.pinimg.com/474x/a0/fe/f9/a0fef98ebec2fb037a49dc06bcee86d8--monopoly.jpg",
                             DescripcionPropietario = "Pues eso, el viejo del monopoly"
                         },
 
                         new propietario()
                         {
                             NombreCompleto = "Amancio Ortega",
-                            FotoDePerfilURL = "D:/NelAllendeIglesias/Proyecto/Backend/imagenes/propietarios/amancio.jpg",
+                            FotoDePerfilURL = "https://cope-cdnmed.agilecontent.com/resources/jpg/9/9/1634539525199.jpg",
                             DescripcionPropietario = "Pues eso, el viejo del zara"
                         },
                     });
@@ -66,14 +66,14 @@ namespace proyecto_Nel.Data
                         new empleados()
                         {
                             NombreCompleto = "Empelado 1",
-                            FotoDePerfilURL = "D:/NelAllendeIglesias/Proyecto/Backend/imagenes/empleados/empleado-1.jpg",
+                            FotoDePerfilURL = "https://happytravel.viajes/wp-content/uploads/2020/04/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png",
                             DescripcionEmpleado = "Empleado 1"
                         },
 
                         new empleados()
                         {
                             NombreCompleto = "Empelado 2",
-                            FotoDePerfilURL = "D:/NelAllendeIglesias/Proyecto/Backend/imagenes/empleados/empleado-2.jpg",
+                            FotoDePerfilURL = "https://happytravel.viajes/wp-content/uploads/2020/04/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png",
                             DescripcionEmpleado = "Empleado 2"
                         },
                     });
@@ -86,10 +86,10 @@ namespace proyecto_Nel.Data
                     context.propiedades.AddRange(new List<propiedades>(){
                         new propiedades()
                         {
-                            NombrePropiedad = "Propiedad 1",
-                            DescripcionPropiedad = "Descripcion de la propiedad 1",
+                            Nombre = "Propiedad 1",
+                            Descripcion = "Descripcion de la propiedad 1",
                             precioPropiedad = 7500000.00,
-                            FotoPropiedadURL = "D:/NelAllendeIglesias/Proyecto/Backend/imagenes/propiedades/casa-1.jpg",
+                            FotoPropiedadURL = "https://st3.idealista.com/news/archivos/styles/imagen_big_lightbox/public/2020-06/im-191825.jpg?sv=_9b9J8T9&itok=7HUggoEv",
                             FechaPublicacion = System.DateTime.Now.AddSeconds(5),
                             FechaFinal = System.DateTime.Now.AddDays(10),
                             IdCiudad = 1,
@@ -99,10 +99,10 @@ namespace proyecto_Nel.Data
 
                         new propiedades()
                         {
-                            NombrePropiedad = "Propiedad 2",
-                            DescripcionPropiedad = "Descripcion de la propiedad 2",
+                            Nombre = "Propiedad 2",
+                            Descripcion = "Descripcion de la propiedad 2",
                             precioPropiedad = 355000.00,
-                            FotoPropiedadURL = "D:/NelAllendeIglesias/Proyecto/Backend/imagenes/propiedades/casa-2.jpg",
+                            FotoPropiedadURL = "https://design-milk.com/images/2017/10/KW-Apartment-anthill-1.jpg",
                             FechaPublicacion = System.DateTime.Now.AddSeconds(5),
                             FechaFinal = System.DateTime.Now.AddDays(10),
                             IdCiudad = 2,
@@ -119,14 +119,14 @@ namespace proyecto_Nel.Data
                     context.propietarios_propiedad.AddRange(new List<propietarios_propiedad>(){
                         new propietarios_propiedad()
                         {
-                            IdPropietario = 1,
-                            IdPropiedad = 1,
+                            IdPropietario = 5,
+                            IdPropiedad =7,
                         },
 
                         new propietarios_propiedad()
                         {
-                            IdPropietario = 2,
-                            IdPropiedad = 2,
+                            IdPropietario = 6,
+                            IdPropiedad = 8,
                         },
                     });
                     context.SaveChanges();

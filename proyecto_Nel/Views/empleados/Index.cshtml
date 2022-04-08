@@ -1,0 +1,44 @@
+﻿@*Definir el modelo*@
+@model IEnumerable<empleados>
+
+@*Definir ViewData*@
+@{
+    ViewData["Title"] = "Lista de Empleados";
+}
+@*Codigo*@
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    @*Nombres importados desde el modelo*@
+                    <th>@Html.DisplayNameFor(model => model.FotoDePerfilURL)</th>
+                    <th>@Html.DisplayNameFor(model => model.NombreCompleto)</th>
+                    <th>@Html.DisplayNameFor(model => model.DescripcionEmpleado)</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+               {
+                   <tr>
+                       <td class="align-middle">
+                           <img class="rounded-circle" src="@item.FotoDePerfilURL" alt="@item.NombreCompleto" style="max-width: 150px"/>
+                       </td>
+                       <td class="align-middle">
+                           @Html.DisplayFor(modelItem => item.NombreCompleto)
+                       </td>
+                       <td class="align-middle">
+                           @Html.DisplayFor(modelItem => item.DescripcionEmpleado)
+                       </td>
+                       <td class="align-middle">
+                           <a class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i>Editar</a>
+                           <a class="btn btn-outline-info"><i class="bi bi-eye"></i>Más detalles</a>
+                           <a class="btn btn-danger text-white"><i class="bi bi-trash"></i>Eliminar</a>
+                       </td>
+                   </tr>
+               }
+            </tbody>
+        </table>
+    </div>
+</div>

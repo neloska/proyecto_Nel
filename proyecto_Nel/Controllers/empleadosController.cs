@@ -17,7 +17,7 @@ namespace proyecto_Nel.Controllers
         public async Task<IActionResult> Index()
         {
             var allempleados = await _context.empleados.ToListAsync();
-            return View();
+            return View(allempleados);
         }
     }
 }

@@ -8,8 +8,13 @@ namespace proyecto_Nel.Models
         [Key]
         public int IdPropietario { get; set; }
 
+        [Display(Name = "Foto de perfil")]
         public string FotoDePerfilURL { get; set; }
+
+        [Display(Name = "Nombre Completo")]
         public string NombreCompleto { get; set; }
+
+        [Display(Name = "Descripción")]
         public string DescripcionPropietario { get; set; }
 
         //Relaciones entre tablas
