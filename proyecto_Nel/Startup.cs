@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using proyecto_Nel.Data;
+using proyecto_Nel.Data.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,9 @@ namespace proyecto_Nel
         {
             //CONFIGURACION DbContext SQLserver
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
+
+            //configuracion de services
+            services.AddScoped<IPropietariosService, propietariosService>();
 
             services.AddControllersWithViews();
         }

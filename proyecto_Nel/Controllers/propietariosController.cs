@@ -1,22 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using proyecto_Nel.Data;
+using proyecto_Nel.Data.Services;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace proyecto_Nel.Controllers
 {
     public class propietariosController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IPropietariosService _service;
 
-        public propietariosController(AppDbContext context)
+        public propietariosController(IPropietariosService service)
         {
-            _context = context;
+            _service = service;
         }
 
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var data = _context.propietario.ToList();
+            var data =await _service.GetAll();
             return View(data);
         }
     }

@@ -7,32 +7,64 @@
 }
 @*Codigo*@
 <div class="row">
-    <div class="col-md-8 offset-md-2">
-        <table class="table">
-            <thead>
-                <tr class="text-center">
-                    @*Nombres importados desde el modelo*@
-                    <th>@Html.DisplayNameFor(model => model.FotoPropiedadURL)</th>
-                    <th>@Html.DisplayNameFor(model => model.Nombre)</th>
-                    <th>@Html.DisplayNameFor(model => model.Descripcion)</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-               {
-                   <tr>
-                       <td class="align-middle">
-                           <img class="rounded-circle" src="@item.FotoPropiedadURL" alt="@item.Nombre" style="max-width: 150px"/>
-                       </td>
-                       <td class="align-middle">
-                           @Html.DisplayFor(modelItem => item.Nombre)
-                       </td>
-                       <td class="align-middle">
-                           @Html.DisplayFor(modelItem => item.Descripcion)
-                       </td>
-                   </tr>
-               }
-            </tbody>
-        </table>
-    </div>
+    @foreach(var item in Model)
+    @*plantilla de bootstrap*@
+    {
+        <div class="col-md-4 col-xs-6 border-primary mb-3">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-header text-white bg-info">
+                            <p class="card-text">
+                                <h5 class="card-title">
+                                    @item.Nombre
+                                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                                    {
+                                        <a class="text-white float-right" asp-action="Edit" asp-route-id="@item.IdPropiedad"><i class="bi bi-pencil-square"></i></a>
+                                    }
+                                </h5>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="@item.FotoPropiedadURL" width="100%" alt="@item.Nombre">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <p class="card-text">@item.Descripcion</p>
+                            <p class="card-text"><b>Ciudad: </b>@item.ciudades.Nombre</p>
+                            <p class="card-text"><b>Tipo de propiedad: </b>@item.PropiedadCiudad</p>
+                            <p class="card-text"><b>Fecha de Publicacion: </b>@item.FechaPublicacion.ToString("dd MMM yy")</p>
+                            <p class="card-text"><b>Fecha de final: </b>@item.FechaFinal.ToString("dd MMM yy")</p>
+                            <p class="card-text ">
+                                <b>Estado: </b>
+                                @if (DateTime.Now >= item.FechaPublicacion && DateTime.Now <= item.FechaFinal)
+                                {
+                                    <span class="badge bg-success text-white">DISPONIBLE</span>
+                                }else
+                                {
+                                    <span class="badge bg-danger text-white">NO DISPONIBLE</span>
+                                }
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card-footer ">
+                            <p class="card-text">
+                                <a class="btn btn-outline-primary float-right" asp-action="Details" asp-route-id="@item.IdPropiedad">
+                                    <i class="bi bi-eye-fill"></i> Detalles de Propiedad
+                                </a>
+                                <a class="btn btn-success text-white @((DateTime.Now > item.FechaFinal) ? "disabled" : "")" 
+                                   asp-controller="Orders" 
+                                   asp-action="AddItemToShoppingCart" 
+                                   asp-route-id="@item.IdPropiedad">
+                                <i class="bi bi-cart-plus"></i>Precio: @item.precioPropiedad.ToString("c")</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
 </div>
