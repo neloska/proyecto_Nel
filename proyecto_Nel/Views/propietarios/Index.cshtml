@@ -32,13 +32,17 @@
                            @Html.DisplayFor(modelItem => item.DescripcionPropietario)
                        </td>
                        <td class="align-middle">
-                           <a class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i>Editar</a>
-                           <a class="btn btn-outline-info"><i class="bi bi-eye"></i>Más detalles</a>
-                           <a class="btn btn-danger text-white"><i class="bi bi-trash"></i>Eliminar</a>
+                           <a class="btn btn-outline-primary" asp-controller="propietarios" asp-action="Edit" asp-route-id="@item.IdPropietario"><i class="bi bi-pencil-square"></i>Editar</a>
+                           <a class="btn btn-outline-info" asp-controller="propietarios" asp-action="Details" asp-route-id="@item.IdPropietario"><i class="bi bi-eye"></i>Más detalles</a>
+                           <a class="btn btn-danger text-white" asp-controller="propietarios" asp-action="Delete" asp-route-id="@item.IdPropietario"><i class="bi bi-trash"></i>Eliminar</a>
                        </td>
                    </tr>
                }
             </tbody>
         </table>
     </div>
+</div>
+
+<div class="text-white" style="position: fixed; right: 30px; bottom: 80px;">
+    <a asp-controller="propietarios" asp-action="Create" class="btn btn-success">Añadir Nuevo</a>
 </div>

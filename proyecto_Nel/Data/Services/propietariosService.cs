@@ -15,30 +15,36 @@ namespace proyecto_Nel.Data.Services
             _context = context;
         }
 
-        public void Add(propietario propietario)
+        public async Task AddAsync(propietario propietario)
         {
-            throw new System.NotImplementedException();
+            await _context.propietario.AddAsync(propietario);
+            await _context.SaveChangesAsync();
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new System.NotImplementedException();
+            var result = await _context.propietario.FirstOrDefaultAsync(n => n.IdPropietario == id);
+            _context.propietario.Remove(result);
+            await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<propietario>> GetAll()
+        public async Task<IEnumerable<propietario>> GetAllAsync()
         {
             var result = await _context.propietario.ToListAsync();
             return result;
         }
 
-        public propietario GetById(int id)
+        public  async Task<propietario> GetByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
+            var result = await _context.propietario.FirstOrDefaultAsync(n => n.IdPropietario == id);
+            return result;
         }
 
-        public propietario Update(int id, propietario newpropietario)
+        public async Task<propietario>UpdateAsync(int id, propietario newpropietario)
         {
-            throw new System.NotImplementedException();
+            _context.Update(newpropietario);
+            await _context.SaveChangesAsync();
+            return newpropietario;
         }
     }
 }
