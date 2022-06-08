@@ -1,34 +1,37 @@
 ﻿@*Definir el modelo*@
-@model IEnumerable<empleados>
+@model IEnumerable<usuarioApp>
 
 @*Definir ViewData*@
 @{
-    ViewData["Title"] = "Lista de Empleados";
+    ViewData["Title"] = "Lista de Usuarios";
 }
 @*Codigo*@
 <div class="row">
-    <div class="col-md-8 offset-md-2">
+    <div class="col-md-6 offset-3">
+        <p>
+            <h3>Listado de todos los usuarios</h3>
+        </p>
         <table class="table">
             <thead>
-                <tr class="text-center">
+                 <tr class="text-left">
                     @*Nombres importados desde el modelo*@
-                    <th>@Html.DisplayNameFor(model => model.FotoDePerfilURL)</th>
                     <th>@Html.DisplayNameFor(model => model.NombreCompleto)</th>
-                    <th>@Html.DisplayNameFor(model => model.DescripcionEmpleado)</th>
+                    <th>@Html.DisplayNameFor(model => model.UserName)</th>
+                    <th>@Html.DisplayNameFor(model => model.Email)</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                {
-                   <tr class="text-center">
-                       <td class="align-middle">
-                           <img class="rounded-circle" src="@item.FotoDePerfilURL" alt="@item.NombreCompleto" style="max-width: 170px"/>
-                       </td>
+                   <tr>
                        <td class="align-middle">
                            @Html.DisplayFor(modelItem => item.NombreCompleto)
                        </td>
                        <td class="align-middle">
-                           @Html.DisplayFor(modelItem => item.DescripcionEmpleado)
+                           @Html.DisplayFor(modelItem => item.UserName)
+                       </td>
+                       <td class="align-middle">
+                           @Html.DisplayFor(modelItem => item.Email)
                        </td>
                    </tr>
                }

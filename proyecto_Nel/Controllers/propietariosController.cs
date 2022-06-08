@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace proyecto_Nel.Controllers
 {
+    [Authorize]
     public class propietariosController : Controller
     {
         private readonly IPropietariosService _service;
@@ -16,7 +17,6 @@ namespace proyecto_Nel.Controllers
         {
             _service = service;
         }
-
 
         public async Task<IActionResult> Index()
         {
@@ -42,7 +42,6 @@ namespace proyecto_Nel.Controllers
         }
 
         //Get: propietarios/Details/1
-        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var propietariosDetails = await _service.GetByIdAsync(id);

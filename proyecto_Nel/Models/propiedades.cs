@@ -14,10 +14,10 @@ namespace proyecto_Nel.Models
         public int IdPropiedad { get; set; }
 
 
-        public string Nombre { get; set; }
+        public string NombrePropiedad { get; set; }
         public double precioPropiedad { get; set; }
         public string FotoPropiedadURL { get; set; }
-        public string Descripcion { get; set; }
+        public string DescripcionPropiedad { get; set; }
         public DateTime FechaPublicacion { get; set; }
         public DateTime FechaFinal { get; set; }
         public PropiedadCiudad PropiedadCiudad { get; set; } //enum que irá dentro de la carpeta Data

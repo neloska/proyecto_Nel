@@ -12,10 +12,10 @@ namespace proyecto_Nel.Models
         public string logolURL { get; set; }
 
         [Display(Name = "Nombre")]
-        public string Nombre { get; set; }
+        public string NombreCiudad { get; set; }
 
         [Display(Name = "Descripción")]
-        public string Descripcion { get; set; }
+        public string DescripcionCiudad { get; set; }
 
         //Relaciones entre tablas
         public List<propiedades> propiedades { get; set; }

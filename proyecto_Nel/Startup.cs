@@ -1,12 +1,15 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using proyecto_Nel.Data;
 using proyecto_Nel.Data.Services;
+using proyecto_Nel.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +36,15 @@ namespace proyecto_Nel
             services.AddScoped<IPropietariosService, propietariosService>();
 
             services.AddControllersWithViews();
+
+            //Autenticacion y autorizacion
+            services.AddIdentity<usuarioApp, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddMemoryCache();
+            services.AddSession();
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +64,10 @@ namespace proyecto_Nel
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
+            //Autenticacion y autorizacion
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -64,6 +79,7 @@ namespace proyecto_Nel
 
             //Seed database
             AppDbInitializer.Seed(app);
+            AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
         }
     }
 }

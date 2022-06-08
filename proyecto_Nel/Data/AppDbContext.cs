@@ -1,9 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using proyecto_Nel.Models;
+using System;
+using System.Threading.Tasks;
 
 namespace proyecto_Nel.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<usuarioApp>
     {
         //traductor de los modelos c# al codigo de sql
 
@@ -35,6 +38,11 @@ namespace proyecto_Nel.Data
         public DbSet<propietarios_propiedad> propietarios_propiedad { get; set; }
         public DbSet<ciudades> ciudades { get; set; }
         public DbSet<empleados> empleados { get; set; }
+
+        internal Task GetPropiedadByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

@@ -1,0 +1,44 @@
+﻿@inject UserManager<usuarioApp> UserManager;
+
+@*si la sesión de usuario no está abierta enseña: *@
+@if (!User.Identity.IsAuthenticated)
+{
+    @*boton Log In*@
+    <a class="btn btn-outline-success dropdown-toggle" asp-controller="Cuenta" asp-action="Login">
+        <i class="bi bi-box-arrow-in-rigth"></i>Log In
+    </a>
+    <span style="padding: 4px;"></span>
+
+    @*boton Registrarse*@
+    <a class="btn btn-outline-primary dropdown-toggle" asp-controller="Cuenta" asp-action="Register">
+        <i class="bi bi-person-plus"></i>Registrarse
+    </a>
+}
+else
+{
+    @*Nombre del usuario*@
+    <div class="dropdown">
+        <button class="btn btn-outline-success dropdown-toggle" type="button" id="profile-btn" data-toggle="dropdown" aria-expanded="false">
+                Hola<b> @UserManager.GetUserName(User)</b>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="profile-btn">
+        @if(User.IsInRole("Admin"))
+        {
+            <li>
+                <a class="dropdown-item" asp-controller="Cuenta" asp-action="Users">
+                    <i class="badge-info bi-people"></i> Usuarios
+                </a>
+            </li>
+        }
+            </ul>
+    </div>
+
+    @*Log out*@
+    <span style="padding: 4px;"></span>
+    <form asp-controller="Cuenta" asp-action="Logout">
+        <button class="btn btn-outline-danger my-2 my-sm-0">
+            <i class="bi bi-box-arrow-in-right"></i>Cerrar sesión
+        </button>
+    </form>
+}
+

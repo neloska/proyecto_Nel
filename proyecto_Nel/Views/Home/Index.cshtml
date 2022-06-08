@@ -2,7 +2,399 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon">
+
+        <!--=============== BOXICONS ===============-->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        
+        <!--=============== SWIPER CSS ===============-->
+        <link rel="stylesheet" href="~/css/swiper-bundle.min.css">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="~/css/styless.css">
+
+        <title>MOON Agencia</title>
+    </head>
+    <body>
+        <!--==================== MAIN ====================-->
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home section" id="home">
+                <div class="home__container container grid">
+                    <div class="home__data">
+                        <h1 class="home__title">
+                            Encuentra <br> tu propiedad <br>ideal
+                        </h1>
+                        <p class="home__description">
+                            La agencia preferida por los asturianos.  
+                            Liderando el sector desde 2002.
+                        </p>
+
+                        <div class="home__value">
+                            <div>
+                                <h1 class="home__value-number">
+                                    8K <span>+</span>
+                                </h1>
+                                <span class="home__value-description">
+                                    Propiedades <br> vendidas
+                                </span>
+                            </div>
+                            <div>
+                                <h1 class="home__value-number">
+                                    3K <span>+</span>
+                                </h1>
+                                <span class="home__value-description">
+                                    Clientes <br> satisfechos
+                                </span>
+                            </div>
+                            <div>
+                                <h1 class="home__value-number">
+                                    25K <span>+</span>
+                                </h1>
+                                <span class="home__value-description">
+                                    Premios <br> atribuidos
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="home__images">
+                        <div class="home__orbe"></div>
+
+                        <div class="home__img">
+                            <img src="~/lib/home.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== LOGOS ====================-->
+            <section class="logos section">
+                <div class="logos__container container grid">
+                    <div class="logos__img">
+                        <img src="~/lib/logo1.png" alt="">
+                    </div>
+                    <div class="logos__img">
+                        <img src="~/lib/logo2.png" alt="">
+                    </div>
+                    <div class="logos__img">
+                        <img src="~/lib/logo3.png" alt="">
+                    </div>
+                    <div class="logos__img">
+                        <img src="~/lib/logo4.png" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== POPULAR ====================-->
+            <section class="popular section" id="popular">
+                <div class="container">
+                    <span class="section__subtitle">Propiedades más populares</span>
+                    <h2 class="section_title">
+                        Top mensual <span>.</span>
+                    </h2>
+
+                    <div class="popular__container swiper">
+                        <div class="swiper-wrapper">
+                            <article class="popular__card swiper-slide">
+                                    <img src="https://st3.idealista.com/news/archivos/styles/imagen_big_lightbox/public/2020-06/im-191825.jpg?sv=_9b9J8T9&itok=7HUggoEv" alt="" class="popular__img">
+
+                                    <div class="popular__data">
+                                        <h2 class="popular__price">
+                                            7.500.000,00 <span>€</span>
+                                        </h2>
+                                        <h3 class="popular__title">
+                                            Mansión Rey Pelayo
+                                        </h3>
+                                        <p class="popular__description">
+                                           Lujoso complejo con 10 habitaciones, 4 baños y 500m2.
+                                           Cuenta con 5 plazas de garaje.
+                                        </p>
+                                    </div>
+                            </article>
+
+                            <article class="popular__card swiper-slide">
+                                    <img src="https://design-milk.com/images/2017/10/KW-Apartment-anthill-1.jpg" alt="" class="popular__img">
+
+                                    <div class="popular__data">
+                                        <h2 class="popular__price">
+                                            355.000,00 <span>€</span>
+                                        </h2>
+                                        <h3 class="popular__title">
+                                            Campo San Francisco
+                                        </h3>
+                                        <p class="popular__description">
+                                            Espacioso apartamento de 3 habitaciones, 2 baños y 100m2.
+                                            Balcón con vistas al parque.
+                                        </p>
+                                    </div>
+                            </article>
+
+                            <article class="popular__card swiper-slide">
+                                    <img src="https://storage.googleapis.com/static.inmoweb.es/clients/745/property/573766/image/resized_vivienda-frontal.jpg" alt="" class="popular__img">
+
+                                    <div class="popular__data">
+                                        <h2 class="popular__price">
+                                            950.000,00 <span>€</span>
+                                        </h2>
+                                        <h3 class="popular__title">
+                                            Urbanización Los Campos
+                                        </h3>
+                                        <p class="popular__description">
+                                            Moderno Chalet con 4 habitaciones, 2 baños y 150m2.
+                                            Domótica instalada en la enteridad de la vivienda.
+                                        </p>
+                                    </div>
+                            </article>
+ 
+                            <article class="popular__card swiper-slide">
+                                    <img src="https://img3.idealista.com/blur/WEB_DETAIL_TOP-L-L/0/id.pro.es.image.master/74/24/24/160819073.jpg" alt="" class="popular__img">
+
+                                    <div class="popular__data">
+                                        <h2 class="popular__price">
+                                            350.000,00 <span>€</span>
+                                        </h2>
+                                        <h3 class="popular__title">
+                                            El Flamenco
+                                        </h3>
+                                        <p class="popular__description">
+                                            Contiene 3 habitaciones, 1 baño y 80m2.
+                                            Casa en la parte alta de Piedras Blancas.
+                                        </p>
+                                    </div>
+                            </article>
+                        </div>
+
+                        <div class="swiper-button-next">
+                            <i class='bx bx-chevrons-right'></i>
+                        </div>
+                        <div class="swiper-button-prev">
+                            <i class='bx bx-chevrons-left' ></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== VALUE ====================-->
+            <section class="value section" id="value">
+                <div class="value__container container grid">
+                    <div class="values__images">
+                        <div class="value__orb"></div>
+
+                        <div class="value__img">
+                            <img src="~/lib/value.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="value__content">
+                        <div class="value__data">
+                            <span class="section__subtitle">Nuestro Valor</span>
+                            <h2 class="section__title">
+                                ¿Qué ofrecemos al cliente?
+                            </h2>
+                            <p class="value__description">
+                                Disponemos de un equipo de profesionales en el sector listos para encargarse de su propiedad de ensueño. 
+                                Creemos que el trato con el cliente debe ser una prioridad.
+                            </p>
+
+                            <div class="value__accordion">
+                                <div class="value__accordion-item">
+                                    <header class="value__accordion-header">
+                                        <i class='bx bxs-shield'></i>
+                                        <h3 class="value__accordion-title">
+                                            Sistema de seguridad
+                                        </h3>
+                                        <div class="value__accordion-arrow">
+                                            <i class='bx bxs-down-arrow' ></i>
+                                        </div>
+                                    </header>
+
+                                    <div class="value__accordion-content">
+                                        <p class="value__accordion-description">
+                                            Transacciones y pagos protegidos en todo momento.
+                                            Las propiedades cuentan con sus debidas revisiones y tasaciones.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="value__accordion">
+                                <div class="value__accordion-item">
+                                    <header class="value__accordion-header">
+                                        <i class='bx bxs-bar-chart-square'></i>
+                                        <h3 class="value__accordion-title">
+                                            Calidad-precio asegurada
+                                        </h3>
+                                        <div class="value__accordion-arrow">
+                                            <i class='bx bxs-down-arrow' ></i>
+                                        </div>
+                                    </header>
+
+                                    <div class="value__accordion-content">
+                                        <p class="value__accordion-description">
+                                            Preveemos los precios inestables del mercado.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="value__accordion">
+                                <div class="value__accordion-item">
+                                    <header class="value__accordion-header">
+                                        <i class='bx bxs-check-square' ></i>
+                                        <h3 class="value__accordion-title">
+                                            Valoracion general
+                                        </h3>
+                                        <div class="value__accordion-arrow">
+                                            <i class='bx bxs-down-arrow' ></i>
+                                        </div>
+                                    </header>
+
+                                    <div class="value__accordion-content">
+                                        <p class="value__accordion-description">
+                                            9 de cada 10 clientes prefieren
+                                            nuestra agencia a la competencia, promediando un 
+                                            4,7/5 en satisfacción.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== CONTACT ====================-->
+            <section class="contact section" id="contact">
+                <div class="contact__container container grid">
+                    <div class="contact__images">
+                        <div class="contact__orbe"></div>
+
+                        <div class="contact__img">
+                            <img src="~/lib/contact.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="contact__content">
+                        <div class="contact__data">
+                            <span class="section__subtitle">Contact Us</span>
+                            <h2 class="section__title">
+                                Contacta con nosotros <span>.</span>
+                            </h2>
+                            <p class="contact__description">
+                                Para cualquier problema o duda que pueda
+                                surgir disponemos de varios medios para
+                                atender sus peticiones, así como de redes sociales.
+                            </p>
+                        </div>
+
+                        <div class="contact__card">
+                            <div class="contact__card-box">
+                                <div class="contact__card-info">
+                                    <i class='bx bxs-phone-call'></i>
+                                    <div>
+                                        <h3 class="contact__card-title">
+                                            Teléfono
+                                        </h3>
+                                        <p class="contact__card-description">
+                                            985.443.793.22
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <button class="button contact__card-button">
+                                    Llamar
+                                </button>
+                            </div>
+
+                            <div class="contact__card-box">
+                                <div class="contact__card-info">
+                                    <i class='bx bx-message-rounded-dots'></i>
+                                    <div>
+                                        <h3 class="contact__card-title">
+                                            Chat 
+                                        </h3>
+                                        <p class="contact__card-description">
+                                            Atención 24 horas
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <button class="button contact__card-button">
+                                    Enviar mensaje
+                                </button>
+                            </div>
+
+                            <div class="contact__card-box">
+                                <div class="contact__card-info">
+                                    <i class='bx bxs-video'></i>
+                                    <div>
+                                        <h3 class="contact__card-title">
+                                            Videollamda
+                                        </h3>
+                                        <p class="contact__card-description">
+                                            632.198.235.37
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <button class="button contact__card-button">
+                                    Llamar
+                                </button>
+                            </div>
+
+                            <div class="contact__card-box">
+                                <div class="contact__card-info">
+                                    <i class='bx bxs-envelope'></i>
+                                    <div>
+                                        <h3 class="contact__card-title">
+                                            SMS
+                                        </h3>
+                                        <p class="contact__card-description">
+                                            632.198.235.37
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <button class="button contact__card-button">
+                                    Enviar mensaje
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== SUBSCRIBE ====================-->
+            <section class="subscribe section">
+                <div class="subscribe__container container">
+                    <h1 class="subscribe__title">
+                        ¿Aún no tienes tu cuenta Moon?
+                    </h1>
+                    <p class="subscribe__description">
+                        Registrate y encuentra tu propiedad
+                        ideal en minutos.
+                    </p>
+                    <a href="Cuenta/Register" class="button subscribe__button">
+                        Registrarse
+                    </a>
+                </div>
+            </section>
+        </main>
+        <!--=============== SWIPER JS ===============-->
+        <script src="~/js/swiper-bundle.min.js"></script>
+
+        <!--=============== SITE JS ===============-->
+        <script src="~/js/site.js"></script>
+    </body>
+</html>
+
+
